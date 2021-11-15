@@ -8,7 +8,8 @@
         "price": 60,
         "brand": " Nike",
         "rating": 4.5,
-        "numReviews": 10
+        "numReviews": 10,
+        "availableSizes": "XL,M,S" 
       },
       {
         "_id": "2",
@@ -18,7 +19,8 @@
         "price": 50,
         "brand": " Nike",
         "rating": 4.2,
-        "numReviews": 5
+        "numReviews": 5,
+        "availableSizes": "XXL" 
       },
       {
         "_id": "3",
@@ -28,7 +30,8 @@
         "price": 70,
         "brand": " Nike",
         "rating": 4.5,
-        "numReviews": 8
+        "numReviews": 8,
+        "availableSizes": "M" 
       }, {
         "_id": "4",
         "name": "Best Pants",
@@ -37,7 +40,8 @@
         "price": 70,
         "brand": " Nike",
         "rating": 4.5,
-        "numReviews": 8
+        "numReviews": 8,
+        "availableSizes": "S" 
       }
     ]
   }
