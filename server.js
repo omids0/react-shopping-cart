@@ -38,5 +38,39 @@ app.delete("/api/products/:id", async (req,res) => {
     const deleteProduct = await Product.findByIdAndDelete(req.params.id)
     res.send(deleteProduct)
 })
+
+const Order = mongoose.model("order", new mongoose.Schema({
+    _id: {
+        type: String,
+        default: shortid.generate
+    },
+    email:String,
+    name:String,
+    address:String,
+    total:Number,
+    cartItems:[{
+        _id: String,
+        name: String,
+        price: Number,
+        count: Number
+    }]
+}, {
+    timestamps: true,
+}))
+
+app.post('/api/orders', async (req, res) => {
+    if(
+        !req.body.name ||
+        !req.body.email ||
+        !req.body.address ||
+        !req.body.total ||
+        !req.body.cartItems
+        ){
+            return res.send({message: 'data is required.'})
+        }
+        const order = await new Order(req.body).save()
+        res.send(order)
+})
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log('served at localhost port:5000'))
